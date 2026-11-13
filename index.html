@@ -107,13 +107,13 @@
             font-style: italic;
         }
 
-        .guide-section {
+        .section-block {
             margin-top: 50px;
             padding-top: 40px;
             border-top: 1px solid #222;
             text-align: left;
         }
-        .guide-section h2 {
+        .section-block h2 {
             color: #fff;
             text-align: center;
             text-transform: uppercase;
@@ -148,6 +148,44 @@
             border: 1px solid #333;
             display: block;
         }
+
+        .review-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-left: 4px solid #8b0000;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            transition: transform 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateX(4px);
+            border-color: #333;
+            border-left-color: #ff0000;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .review-author {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        .review-stars {
+            color: #8b0000;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+        .review-text {
+            color: #b0b0b0;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
         .footer { margin-top: 50px; font-size: 0.9rem; color: #444; text-align: center; }
     </style>
 </head>
@@ -162,14 +200,14 @@
         <div class="buttons-group">
             <a href="https://github.com/vudi0980-oss/horror-game/releases/download/v0.1/horror_game_windows.zip" class="download-btn btn-zip">
                 <span>Скачать Windows (ZIP)</span>
-                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://w3.org">
+                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
                 </svg>
             </a>
 
             <a href="https://github.com/vudi0980-oss/horror-game/releases/download/v0.1/horror_game_windows.rar" class="download-btn btn-rar">
                 <span>Скачать Windows (RAR)</span>
-                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://w3.org">
+                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
                 </svg>
             </a>
@@ -177,7 +215,7 @@
 
         <div class="sub-note">© 2026 Снято по приколу с подругой на новый айфон.</div>
 
-        <div class="guide-section">
+        <div class="section-block">
             <h2>Как установить игру</h2>
 
             <div class="step-card">
@@ -196,6 +234,46 @@
                 <div class="step-text mb-15">Откройте распакованную папку и запустите файл <b>Game.exe</b>. Если Windows выдаст предупреждение, нажмите «Подробнее» -> «Выполнить в любом случае».</div>
                 <img src="step3.png" alt="Шаг 3" class="step-img">
             </div>
+        </div>
+
+        <div class="section-block">
+            <h2>Лучшие отзывы</h2>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-author">Неизвестный #01</span>
+                    <span class="review-stars">★★★★★</span>
+                </div>
+                <div class="review-text">«Выбрал повернуть направо... зря. Атмосфера пустой ночной улицы передана слишком реалистично, теперь стрёмно вечером выходить из подъезда.»</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-author">Главная жертва</span>
+                    <span class="review-stars">★★★★★</span>
+                </div>
+                <div class="review-text">«10/10, но бегать по холоду на съёмках было страшно. Жду вторую часть, где я наконец-то смогу убежать!»</div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>Комментарии игроков</h2>
+            
+            <script src="https://giscus.app/client.js"
+                    data-repo="vudi0980-oss/horror-game"
+                    data-repo-id="R_kgDOVs9MCg"
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDOVs9MCs4DLCaR"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="transparent_dark"
+                    data-lang="ru"
+                    crossorigin="anonymous"
+                    async>
+            </script>
         </div>
         
         <div class="footer">
