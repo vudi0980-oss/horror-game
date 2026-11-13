@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Не оглядывайся | Интерактивный Хоррор</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0;
+            background-color: #0a0a0a; color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; text-align: center; overflow-x: hidden;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container {
+            max-width: 700px; padding: 40px 20px;
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+        
+        /* Стили для вашего SVG логотипа */
+        .site-logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(220, 0, 0, 0.4));
+            transition: transform 0.4s ease;
+        }
+        .site-logo:hover {
+            transform: scale(1.06);
+        }
+
+        h1 {
+            color: #8b0000; font-size: 3.5rem; margin-top: 0; margin-bottom: 15px;
+            text-transform: uppercase; letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+        }
+        .main-desc { 
+            font-size: 1.2rem; line-height: 1.6; color: #a0a0a0; margin-bottom: 35px; 
+        }
+
+        /* Контейнер для двух кнопок */
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Общий стиль кнопок скачивания */
+        .download-btn {
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 12px;
+            width: 330px; 
+            color: #fff; 
+            text-decoration: none;
+            padding: 16px 24px; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            border-radius: 6px;
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .download-btn:active { transform: scale(0.96); }
+
+        /* Красная кнопка ZIP */
+        .btn-zip {
+            background-color: #8b0000; 
+            border: 1px solid #5a0000; 
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+        }
+        .btn-zip:hover { 
+            background-color: #b30000; 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.6); 
+        }
+
+        /* Тёмная кнопка RAR */
+        .btn-rar {
+            background-color: #1a1a1a; 
+            border: 1px solid #333; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .btn-rar:hover { 
+            background-color: #292929; 
+            border-color: #555;
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.12); 
+        }
+
+        .win-logo {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Подпись сразу под кнопками */
+        .sub-note {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Стили для блока инструкции */
+        .guide-section {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+            text-align: left;
+        }
+        .guide-section h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        .step-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .step-title {
+            color: #8b0000;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .step-text {
+            color: #ccc;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .step-img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #333;
+            display: block;
+        }
+        .footer { margin-top: 50px; font-size: 0.9rem; color: #444; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ВАШ SVG ЛОГОТИП -->
+        <img src="logo.svg" alt="Логотип" class="site-logo">
+
+        <h1>НЕ ОГЛЯДЫВАЙСЯ</h1>
+        <p class="main-desc">Интерактивное кино-хоррор. Каждое твоё решение меняет финал истории. Сможешь ли ты выбраться с пустой улицы живым?</p>
+        
+        <!-- КНОПКИ СКАЧИВАНИЯ (ZIP И RAR) -->
+        <div class="buttons-group">
+            <a href="horror_game_windows.zip" class="download-btn btn-zip" download>
+                <span>Скачать Windows (ZIP)</span>
+                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://w3.org">
+                    <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
+                </svg>
+            </a>
+
+            <a href="horror_game_windows.rar" class="download-btn btn-rar" download>
+                <span>Скачать Windows (RAR)</span>
+                <svg class="win-logo" viewBox="0 0 88 88" xmlns="http://w3.org">
+                    <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203zm35.67 33.529l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.314 0v41.527l-47.318.376zm47.329 39.349l-.011 41.34-47.318-6.678-.066-34.739z"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- ПОДПИСЬ ВЫШЕ ИНСТРУКЦИИ -->
+        <div class="sub-note">© 2026 Снято по приколу с подругой на новый айфон.</div>
+
+        <!-- ИНСТРУКЦИЯ ПО УСТАНОВКЕ -->
+        <div class="guide-section">
+            <h2>Как установить игру</h2>
+
+            <div class="step-card">
+                <div class="step-title">Шаг 1. Скачайте архив</div>
+                <div class="step-text">Выберите удобный формат выше (<b>ZIP</b> или <b>RAR</b>) и дождитесь загрузки архива с игрой.</div>
+                <img src="step1.png" alt="Шаг 1" class="step-img">
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">Шаг 2. Распакуйте файлы</div>
+                <div class="step-text">Нажмите правой кнопкой мыши по скачанному архиву и выберите <b>«Извлечь всё...»</b> (или <b>«Извлечь в текущую папку»</b> в WinRAR). Не запускайте игру прямо из архива!</div>
+                <img src="step2.png" alt="Шаг 2" class="step-img">
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">Шаг 3. Запустите игру</div>
+                <div class="step-text">Откройте распакованную папку и запустите файл <b>Game.exe</b>. Если Windows выдаст предупреждение, нажмите «Подробнее» -> «Выполнить в любом случае».</div>
+                <img src="step3.png" alt="Шаг 3" class="step-img">
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Не оглядывайся — Интерактивный триллер</p>
+        </div>
+    </div>
+
+</body>
+</html>
