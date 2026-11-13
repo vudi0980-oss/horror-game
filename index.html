@@ -149,6 +149,19 @@
             display: block;
         }
 
+        /* Заглушка, когда лучших отзывов пока нет */
+        .empty-reviews {
+            background-color: #111;
+            border: 1px dashed #333;
+            border-radius: 8px;
+            padding: 25px 20px;
+            text-align: center;
+            color: #777;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        /* Карточки лучших отзывов (на будущее, когда появятся) */
         .review-card {
             background-color: #111;
             border: 1px solid #222;
@@ -215,6 +228,7 @@
 
         <div class="sub-note">© 2026 Снято по приколу с подругой на новый айфон.</div>
 
+        <!-- ИНСТРУКЦИЯ ПО УСТАНОВКЕ -->
         <div class="section-block">
             <h2>Как установить игру</h2>
 
@@ -236,26 +250,26 @@
             </div>
         </div>
 
+        <!-- ЛУЧШИЕ ОТЗЫВЫ -->
         <div class="section-block">
             <h2>Лучшие отзывы</h2>
 
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-author">Неизвестный #01</span>
-                    <span class="review-stars">★★★★★</span>
-                </div>
-                <div class="review-text">«Выбрал повернуть направо... зря. Атмосфера пустой ночной улицы передана слишком реалистично, теперь стрёмно вечером выходить из подъезда.»</div>
+            <div class="empty-reviews">
+                Лучших отзывов пока нет... Будь первым, кто оставит своё мнение в комментариях ниже!
             </div>
 
+            <!-- КОГДА ПОЯВЯТСЯ ОТЗЫВЫ, РАСКОММЕНТИРУЙ ЭТОТ БЛОК И ВПИШИ ТЕКСТ:
             <div class="review-card">
                 <div class="review-header">
-                    <span class="review-author">Главная жертва</span>
+                    <span class="review-author">Имя игрока</span>
                     <span class="review-stars">★★★★★</span>
                 </div>
-                <div class="review-text">«10/10, но бегать по холоду на съёмках было страшно. Жду вторую часть, где я наконец-то смогу убежать!»</div>
+                <div class="review-text">«Текст отзыва»</div>
             </div>
+            -->
         </div>
 
+        <!-- ЖИВЫЕ КОММЕНТАРИИ (GISCUS) -->
         <div class="section-block">
             <h2>Комментарии игроков</h2>
             
